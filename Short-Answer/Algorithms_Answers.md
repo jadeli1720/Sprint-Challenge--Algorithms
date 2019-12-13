@@ -16,12 +16,29 @@ c)  0(n). Recursive functions allow the input to only have to be looped through 
 
 ## Exercise II
 
-n-story building, plenty of eggs
+### UNDERSTANDING: 
+    n-story building, plenty of eggs
+    
+    egg breaks n-story >= f
+    egg ! break n-story < f
 
-egg breaks n-story >= f
-egg ! break n-story < f
+    value of f 
+    number of dropped + broken eggs is minimized
 
-value of f
-number of dropped + broken eggs is minimized
+* Need to determine at which floor = f has the least broken eggs when dropped at said floor
+
+### PLANNING:
+    
+    1. Let min_floor = 0, max_floor = n
+    2. Find the mid point between min and max: mid_floor = n//2
+    3. Throw an egg from the mid point.
+        a. if egg breaks, change max_floor = mid_floor
+            repeat 2 and 3
+        b. if egg doesn't break, change min_floor = mid floor
+            repeat 2 and 3
+    4. Return current floor if the floor below or above if the egg breaks
+
+
+
 
 
