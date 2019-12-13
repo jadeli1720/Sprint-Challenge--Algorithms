@@ -7,12 +7,9 @@ pseudocode with respect to the input size n of each of the following:
 
 ```python
 a)  a = 0                  #: O(1) ==> constant
-    while (a < n * n * n): #: O(n^3) ==> n multiplied by itself 3 times
-      a = a + n * n        #: O(n^2) ==> n multiplied by itself 2 times
+    while (a < n * n * n): #: O(1) ==> constant just comparing and does not impact the growth of n
+      a = a + n * n        #: O(n) ==> This is what increases the the output
 
-# 1 + n^3 * n^2 ---> 1 does not affect growth of n
-# n^3 * n^2 ---> multiplying these terms
-# n^5 ---> This is your answer
 ```
 
 
