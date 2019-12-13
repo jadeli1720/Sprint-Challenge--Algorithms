@@ -13,18 +13,26 @@ Understanding:
 
 Plan:
 
-1. Need to find all lowercase th
-2. check combination of 2 letters along the length of the string
+1. Account for if the input is empty or less than 2.
+    if it is return 0 else do the following:
+2. Need to find all lowercase th
+3. check combination of 2 letters along the length of the string
     isolate every 2 letters in string
-3. for every 2 letter combination that has "th" add to count (but can use for loop)
+4. for every 2 letter combination that has "th" add to count (but can use for loop)
     count_th +1???
+
 
 
 '''
 def count_th(word):
-    print(len(word)) # wreath length ==> 6
+    # print(len(word)) # wreath length ==> 6
+    # If the length of word is 0 or less than 2 retrun 0
+    if len(word) == 0 or len(word) < 2:
+        return 0
+
+    # elif len(word)    
     
-    print(word[0:2]) # isolates 2 letters
+    # print(word[0:2]) # isolates 2 letters
 
 
 count_th("wreath")
