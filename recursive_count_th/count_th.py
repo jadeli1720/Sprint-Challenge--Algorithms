@@ -35,7 +35,7 @@ def count_th(word):
     
     #Use recursion
     #if find word is 
-    if find_word > -1:
+    if find_word != -1:
         print(True)
     else:
         print(False)
