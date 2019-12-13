@@ -21,18 +21,29 @@ Plan:
 4. for every 2 letter combination that has "th" add to count (but can use for loop)
     count_th +1???
 
-
+5. can we use .find() ---> returns the lowest index of the sub string if it is found in the given string. If it is not found then it returns -1
 
 '''
 def count_th(word):
-    # print(len(word)) # wreath length ==> 6
+    print("Word length",len(word)) # wreath length ==> 6
     # If the length of word is 0 or less than 2 retrun 0
     if len(word) == 0 or len(word) < 2:
         return 0
 
-    # elif len(word)    
+    count = 0
+    find_word = word.find("th") 
     
-    # print(word[0:2]) # isolates 2 letters
+    #Use recursion
+    #if find word is 
+    if find_word > -1:
+        print(True)
+    else:
+        print(False)
 
+    # return count_th
 
-count_th("wreath")
+    
+    # print(count_th)
+    # return count_th
+
+print("Calling function",count_th(""))
