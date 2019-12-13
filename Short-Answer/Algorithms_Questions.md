@@ -6,27 +6,34 @@ Give an analysis of the running time of each snippet of
 pseudocode with respect to the input size n of each of the following:
 
 ```python
-a)  a = 0
-    while (a < n * n * n):
-      a = a + n * n
+a)  a = 0                  #: O(1) ==> constant
+    while (a < n * n * n): #: O(n^3) ==> n multiplied by itself 3 times
+      a = a + n * n        #: O(n^2) ==> n multiplied by itself 2 times
+
+# 1 + n^3 * n^2 ---> 1 does not affect growth of n
+# n^3 * n^2 ---> multiplying these terms
+# n^5 ---> This is your answer
 ```
 
 
-```
-b)  sum = 0
-    for i in range(n):
-      j = 1
-      while j < n:
-        j *= 2
-        sum += 1
+```python
+b)  sum = 0             # O(1) ===> constant
+    for i in range(n):  # O(n) ===> looping through the input
+      j = 1             # O(1) ===> constant
+      while j < n:      # O(n) ===> looping through the input
+        j *= 2          # O(1) ===> constant
+        sum += 1        # O(1) ===> constant
+
+# 1 + n * n + 3
+# n^2
 ```
 
-```
+``` python
 c)  def bunnyEars(bunnies):
-      if bunnies == 0:
-        return 0
+      if bunnies == 0:                  #O(1)  ===> constant
+        return 0                        #O(1)  ===> constant
 
-      return 2 + bunnyEars(bunnies-1)
+      return 2 + bunnyEars(bunnies-1)   # 2 + O(n)
 ```
 
 ## Exercise II
