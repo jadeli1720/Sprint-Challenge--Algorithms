@@ -21,32 +21,46 @@ Plan:
 4. for every 2 letter combination that has "th" add to count (but can use for loop)
     count_th +1???
 
-5. can we use .find() ---> returns the lowest index of the sub string if it is found in the given string. If it is not found then it returns -1
+5. can we use .find() ?
+Syntax:
+    str.find(sub[, start[, end]] )
 
-    *str.find(sub[, start[, end]] )
-    *sub - It's the substring to be searched in the str string.
-    *start and end (optional) - substring is searched within str[start:end] -->slice
+Parameters:
+    The find() method takes maximum of three parameters:
+        *sub - It's the substring to be searched in the str string.
+        *start and end (optional) - substring is searched within str[start:end] --> slice
+        
+Return Value:
+    The find() method returns an INTEGER value.
+        *If substring exists inside the string, it returns the index of first occurence of the substring.
+        *If substring doesn't exist inside the string, it returns -1. 
 
 '''
 def count_th(word):
-    print("Word length",len(word)) # wreath length ==> 6
+    
     # If the length of word is 0 or less than 2 retrun 0
     if len(word) == 0 or len(word) < 2:
         return 0
-
-    count = 0
-    find_word = word.find("th") 
-    print("Find word",find_word)
     
-    #if find word is 
+    #Initialize count to 0. Will add the number of time "th" is found
+    count = 0
+    # Initialize find_word using .find() to locate "th" in string. 
+    find_word = word.find("th") 
+    # print("Find word",find_word)
+    
+    #if result of find_word is not -1
     if find_word != -1:
-        # print(True)
-        # add to the count
+        # add to the count ---> += allows to iterate?
         count += 1
-        print("Count", count)
+        # print("Count", count)
 
         # Use recursion to check the string for other th's
+        #count = incrementing through string in groups of 2 to find "th" and adding it to  count
+        count += count_th(word[int(find_word) + 2:])
+        # print("recursion", count)
 
+    # return the total number of times "th" was found through the string
+    return count
 
-print("Calling function",count_th("wreath"))
-# print("Calling function",count_th("thhtthht"))
+# print("Calling function",count_th("wreath"))
+print("Calling function",count_th("thhtthht"))
