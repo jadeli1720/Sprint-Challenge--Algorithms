@@ -23,6 +23,10 @@ Plan:
 
 5. can we use .find() ---> returns the lowest index of the sub string if it is found in the given string. If it is not found then it returns -1
 
+    *str.find(sub[, start[, end]] )
+    *sub - It's the substring to be searched in the str string.
+    *start and end (optional) - substring is searched within str[start:end] -->slice
+
 '''
 def count_th(word):
     print("Word length",len(word)) # wreath length ==> 6
@@ -32,18 +36,17 @@ def count_th(word):
 
     count = 0
     find_word = word.find("th") 
+    print("Find word",find_word)
     
-    #Use recursion
     #if find word is 
     if find_word != -1:
-        print(True)
-    else:
-        print(False)
+        # print(True)
+        # add to the count
+        count += 1
+        print("Count", count)
 
-    # return count_th
+        # Use recursion to check the string for other th's
 
-    
-    # print(count_th)
-    # return count_th
 
-print("Calling function",count_th(""))
+print("Calling function",count_th("wreath"))
+# print("Calling function",count_th("thhtthht"))
