@@ -123,13 +123,21 @@ class SortingRobot:
                     self.swap_item()
                     self.light_is_on()
                     print("==========")
-            
+                elif self.compare_item() == -1:
+                    self.move_left()
+                
+                
             # Moving left == true
-            while self.can_move_left() == True:
-                self.swap_item()
+            while self.can_move_left() :
                 self.move_left()
-                print("moved left \n=====")
-
+                self.light_is_on()
+                
+                if self.compare_item() == -1 or self.compare_item() == None :
+                    self.swap_item()
+                    self.light_is_on() # ---> allows function to move on
+                    print("==========")
+                elif self.compare_item() == None:
+                    self.move_right()
 
         print(f"Item {self._item} is in the Robots hand" )
         # at the end of this pass l = [None, 5, 4, 3, 2] 
