@@ -17,12 +17,12 @@ a)  a = 0                  #: O(1) ==> constant
 b)  sum = 0             # O(1) ===> constant
     for i in range(n):  # O(n) ===> looping through the input
       j = 1             # O(1) ===> constant
-      while j < n:      # O(n) ===> looping through the input
-        j *= 2          # O(1) ===> constant
+      while j < n:      # O(log n) ===> slightly slower
+        j *= 2          # O(1) ===> constant --> j= j*2
         sum += 1        # O(1) ===> constant
 
-# 1 + n * n + 3
-# n^2
+# n * log n
+
 ```
 
 ``` python

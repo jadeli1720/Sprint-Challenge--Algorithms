@@ -105,68 +105,40 @@ class SortingRobot:
         4. Repeat steps 2 and 3
         """
 
-        # Importance of light - turns on when it can move? When it swaps?
-        
-        # Start off by grabbing first item (starts with nothing in hand)
-       
-        while(True):
-            # self.swap_item()
-            # self.move_right()
+        # Importance of light 
+        self.set_light_on()
+        # self.swap_item()
 
-            if self.can_move_right() == False:
+        while self.light_is_on():
+            self.set_light_off()
+            print(self._item)
+            
+            while self.can_move_right():
                 self.swap_item()
-                
-                break
-            
-            
-            # Moving right:
-            while self.can_move_right() == True:
+                self.move_right()
+             
                 # compare:
                 if self.compare_item() == 1:
-                    # swap:
+                    # # swap:
                     self.swap_item()
-                    self.set_light_on()
-                    self.move_right()
-                    print("Moved right")
-                    self.set_light_off()
+                    self.light_is_on()
                     print("==========")
-                else:
-                    self.move_left()
-                    self.swap_item()
-                    self.move_right()
-                    print("hit right else statement")
-                    
-                continue
             
+            # Moving left == true
             while self.can_move_left() == True:
-                if self.compare_item() == 1:
-                    # swap:
-                    self.swap_item()
-                    self.set_light_on()
-                    self.move_left()
-                    print("Moved Left")
-                    self.set_light_off()
-                else:
-                    self.move_right()
-                    self.swap_item()
-                    self.move_left()
-                    print("hit left else statement")
-            continue
+                self.swap_item()
+                self.move_left()
+                print("moved left \n=====")
+
+
+        print(f"Item {self._item} is in the Robots hand" )
+        # at the end of this pass l = [None, 5, 4, 3, 2] 
             
-                
-                    
+            
 
 
-
-
-
-
-
-                
-                
-                
-
-
+            
+            
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`

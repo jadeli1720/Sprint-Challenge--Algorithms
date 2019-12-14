@@ -6,7 +6,7 @@
 a) O(n). This one is deceptive and seems like O(n^3). However, it will only run until it hits it limit.
 
 
-b) O(n^2). This example shows a nested for loop which means the n/input is being looped over two times every single run of the function. The runtime will become slower as the size of n increases exponentially.
+b) O(log n). When the function hits the while loop, the runtime will grow at a slightly slower rate as n increases.
 
 
 
