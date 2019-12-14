@@ -136,9 +136,6 @@ class SortingRobot:
             
             
 
-
-            
-            
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
@@ -150,3 +147,50 @@ if __name__ == "__main__":
 
     robot.sort()
     print(robot._list)
+
+
+        # """
+        # 1. start at index 0 and pick up item
+        # 2. move right continuously and compare all list items to what is in hand
+        #     a. if item is greater than list item --> swap (turn on light to signify swap?)
+        # 3. once end to the right is ended move all the way left
+        #     a. place item in list with empty spot
+        # 4. Repeat steps 2 and 3
+        # """
+
+        # # self.swap_item()
+        # self.set_light_on()
+        
+        # print(self.set_light_on)
+        
+        # while self.light_is_on():
+        #     self.set_light_off()
+        #     # print(self._item)
+            
+        #     if self.compare_item() == None:
+        #         self.swap_item()
+            
+        #     while self.can_move_right() == True:
+        #         # self.swap_item()
+        #         self.move_right()
+             
+        #         # compare:
+        #         if self.compare_item() == 1:
+        #             # swap:
+        #             self.swap_item()
+        #             print("==========")
+            
+        #         if self.can_move_right() == False:
+        #             self.swap_item()
+        #             self.move_left()
+                    
+        #     # Moving left == true
+        #     while self.can_move_left() == True:
+        #         self.move_left()
+                
+        #         # compare:
+        #         if self.compare_item() == -1:
+        #             # swap:
+        #             self.swap_item()
+        #             print("==========")
+                
