@@ -105,39 +105,31 @@ class SortingRobot:
         4. Repeat steps 2 and 3
         """
 
-        # Importance of light 
+        self.swap_item()
         self.set_light_on()
-        # self.swap_item()
-
+        
+        # print(self.set_light_on)
+        
         while self.light_is_on():
             self.set_light_off()
             print(self._item)
             
             while self.can_move_right():
-                self.swap_item()
+                # self.swap_item()
                 self.move_right()
              
                 # compare:
                 if self.compare_item() == 1:
-                    # # swap:
+                    # swap:
                     self.swap_item()
-                    self.light_is_on()
                     print("==========")
-                elif self.compare_item() == -1:
-                    self.move_left()
-                
-                
+                    
             # Moving left == true
-            while self.can_move_left() :
+            while self.can_move_left() and self.light_is_on() == False:
                 self.move_left()
-                self.light_is_on()
-                
-                if self.compare_item() == -1 or self.compare_item() == None :
-                    self.swap_item()
-                    self.light_is_on() # ---> allows function to move on
-                    print("==========")
-                elif self.compare_item() == None:
-                    self.move_right()
+            
+            if self.compare_item() == None:
+                self.swap_item()
 
         print(f"Item {self._item} is in the Robots hand" )
         # at the end of this pass l = [None, 5, 4, 3, 2] 
