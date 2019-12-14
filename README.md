@@ -30,11 +30,11 @@ For this portion of the Sprint Challenge, you'll be answering questions posed in
 
 #### 1. Analyzing runtime _(3 points)_
 
-[] Given 3 blocks of code, identify the runtime of each. Justify your answer.
+[x] Given 3 blocks of code, identify the runtime of each. Justify your answer.
 
 #### 2. Find the highest floor _(3 points)_
 
-[] Suppose that you have an n-story building and plenty of eggs. Suppose also that an egg gets broken if it is thrown off floor f or higher, and doesn't get broken if dropped off a floor less than floor f. Devise a strategy to determine the value of f such that the number of dropped + broken eggs is minimized.
+[x] Suppose that you have an n-story building and plenty of eggs. Suppose also that an egg gets broken if it is thrown off floor f or higher, and doesn't get broken if dropped off a floor less than floor f. Devise a strategy to determine the value of f such that the number of dropped + broken eggs is minimized.
 
 Write out your proposed algorithm in plain English or pseudocode AND give the runtime complexity of your solution.
 
@@ -43,7 +43,7 @@ Write out your proposed algorithm in plain English or pseudocode AND give the ru
 #### 3. Use recursion to complete the `count_th()` function _(3 points)_
 Inside the `recursive_count_th` directory you'll find the `count_th.py` file. In this file, please add your recursive implementation to the `count_th()` method following these rules:
 
-* Your function should take in a signle parameter (a string `word`)
+* Your function should take in a single parameter (a string `word`)
 * Your function should return a count of how many occurences of ***"th"*** occur within `word`. Case matters.
 * Your function must utilize recursion. 
   * It cannot contain any loops.

@@ -38,6 +38,10 @@ c)  0(n). Recursive functions allow the input to only have to be looped through 
             repeat 2 and 3
     4. Return current floor if the floor below or above if the egg breaks
 
+### RUN COMPLEXITY: 
+    O(Log n) Because i am using a binary search. The function is repeatedly checked until the value is found.
+
+
 
 
 

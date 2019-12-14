@@ -98,10 +98,8 @@ class SortingRobot:
         """
         """
         1. start at index 0 and pick up item
-        2. move right continuosly and compare all list items to what is hand
+        2. move right continuously and compare all list items to what is in hand
             a. if item is greater than list item --> swap (turn on light to signify swap?)
-            b. move to the left and swap.
-            c. put new held item to the left
         3. once end to the right is ended move all the way left
             a. place item in list with empty spot
         4. Repeat steps 2 and 3
@@ -119,23 +117,43 @@ class SortingRobot:
                 self.swap_item()
                 
                 break
-            # else:
-            #     while self.can_move_left():
-            #         self.move_left()
+            
             
             # Moving right:
-            if self.can_move_right() == True:
+            while self.can_move_right() == True:
                 # compare:
                 if self.compare_item() == 1:
                     # swap:
                     self.swap_item()
                     self.set_light_on()
                     self.move_right()
+                    print("Moved right")
                     self.set_light_off()
+                    print("==========")
                 else:
                     self.move_left()
                     self.swap_item()
                     self.move_right()
+                    print("hit right else statement")
+                    
+                continue
+            
+            while self.can_move_left() == True:
+                if self.compare_item() == 1:
+                    # swap:
+                    self.swap_item()
+                    self.set_light_on()
+                    self.move_left()
+                    print("Moved Left")
+                    self.set_light_off()
+                else:
+                    self.move_right()
+                    self.swap_item()
+                    self.move_left()
+                    print("hit left else statement")
+            continue
+            
+                
                     
 
 

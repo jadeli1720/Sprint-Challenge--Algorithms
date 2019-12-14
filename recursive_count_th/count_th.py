@@ -39,7 +39,7 @@ Return Value:
 def count_th(word):
     
     # If the length of word is 0 or less than 2 retrun 0
-    if len(word) == 0 or len(word) < 2:
+    if len(word) == 0 or len(word) < 2: #base case --->break out of loop once there are no more letters
         return 0
     
     #Initialize count to 0. Will add the number of time "th" is found
@@ -55,9 +55,10 @@ def count_th(word):
         # print("Count", count)
 
         # Use recursion to check the string for other th's
-        #count = incrementing through string in groups of 2 to find "th" and adding it to  count
+        #count = incrementing through string in groups of 2 to find "th" and adding it to count
         count += count_th(word[int(find_word) + 2:])
         # print("recursion", count)
+        # It will loop back through the words starting at [0] after the found "th"
 
     # return the total number of times "th" was found through the string
     return count
