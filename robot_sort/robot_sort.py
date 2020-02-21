@@ -96,17 +96,101 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        """
+        1. start at index 0 and pick up item
+        2. move right continuously and compare all list items to what is in hand
+            a. if item is greater than list item --> swap (turn on light to signify swap?)
+        3. once end to the right is ended move all the way left
+            a. place item in list with empty spot
+        4. Repeat steps 2 and 3
+        """
 
+        self.swap_item()
+        self.set_light_on()
+        
+        # print(self.set_light_on)
+        
+        while self.light_is_on():
+            self.set_light_off()
+            print(self._item)
+            
+            while self.can_move_right():
+                # self.swap_item()
+                self.move_right()
+             
+                # compare:
+                if self.compare_item() == 1:
+                    # swap:
+                    self.swap_item()
+                    print("==========")
+                    
+            # Moving left == true
+            while self.can_move_left() and self.light_is_on() == False:
+                self.move_left()
+            
+            if self.compare_item() == None:
+                self.swap_item()
+
+        print(f"Item {self._item} is in the Robots hand" )
+        # at the end of this pass l = [None, 5, 4, 3, 2] 
+            
+            
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
 
-    l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
+    # l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
+    l = [5, 4, 3, 2, 1]
 
     robot = SortingRobot(l)
 
     robot.sort()
     print(robot._list)
+
+
+        # """
+        # 1. start at index 0 and pick up item
+        # 2. move right continuously and compare all list items to what is in hand
+        #     a. if item is greater than list item --> swap (turn on light to signify swap?)
+        # 3. once end to the right is ended move all the way left
+        #     a. place item in list with empty spot
+        # 4. Repeat steps 2 and 3
+        # """
+
+        # # self.swap_item()
+        # self.set_light_on()
+        
+        # print(self.set_light_on)
+        
+        # while self.light_is_on():
+        #     self.set_light_off()
+        #     # print(self._item)
+            
+        #     if self.compare_item() == None:
+        #         self.swap_item()
+            
+        #     while self.can_move_right() == True:
+        #         # self.swap_item()
+        #         self.move_right()
+             
+        #         # compare:
+        #         if self.compare_item() == 1:
+        #             # swap:
+        #             self.swap_item()
+        #             print("==========")
+            
+        #         if self.can_move_right() == False:
+        #             self.swap_item()
+        #             self.move_left()
+                    
+        #     # Moving left == true
+        #     while self.can_move_left() == True:
+        #         self.move_left()
+                
+        #         # compare:
+        #         if self.compare_item() == -1:
+        #             # swap:
+        #             self.swap_item()
+        #             print("==========")
+                
